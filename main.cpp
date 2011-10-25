@@ -1,11 +1,21 @@
-#include <QtGui/QApplication>
-#include "mainwindow.h"
+#include "MainWindow.h"
+#include <QApplication>
 
-int main(int argc, char *argv[])
+/*
+ * This is your main() function. Very simple.
+ */
+int main(int argc, char **argv)
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+    // Every Qt GUI needs a QApplication.
+    QApplication app(argc, argv);
 
-    return a.exec();
+    // This is your MainWindow that you created with Designer
+    // Declare it and show it.
+    MainWindow mainWindow;
+    mainWindow.show();
+
+    // This will not return until the last window is closed.
+    // This runs the GUI's event loop handling painting and
+    // user input and stuff like that.
+    return app.exec();
 }
